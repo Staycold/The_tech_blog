@@ -44,6 +44,8 @@ router.get('/:id', async (req, res) => {
           .json({ message: 'Incorrect email or password, please try again' });
         return;
       }
+      // sessions
+      
       res.json({ user: userData, message: 'You are now logged in!' });
     } catch (err) {
       res.status(400).json(err);
