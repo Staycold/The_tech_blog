@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Castoro&display=swap');
+
+
+body {
+    font-family:'Castoro', serif;
+    padding: 20px;
+    background: #f1f1f1;
+  }
+  
+  /* Header/Blog Title */
+  .header {
+    padding: 30px;
+    font-size: 40px;
+    text-align: center;
+    background: white;
+  }
+  
+  /* Create two unequal columns that floats next to each other */
+  /* Left column */
+  .leftcolumn {
+    float: left;
+    width: 75%;
+  }
+  
+  /* Right column */
+  .rightcolumn {
+    float: left;
+    width: 25%;
+    padding-left: 20px;
+  }
+  
+  /* Fake image */
+  .fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  /* Add a card effect for articles */
+  .card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Footer */
+  .footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+    margin-top: 20px;
+  }
+  
+  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {
+      width: 100%;
+      padding: 0;
+    }
+  }
+
+  /* == */
+
+  @import url('https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap');
+
+
+body{
+    background-color: antiquewhite;
+}
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'STIX Two Math', serif;
+    
+  }
+  main{
+    height: 100vh;
+   background-image: linear-gradient(#353535,#D9D9D9,#FFFFFF, #3C6E71,);
+  }
+
+   .card{
+   width: 14rem;
+   height: 28rem;
+   color: rgb(44, 32, 15);
+   /* background-image: linear-gradient(
+     #e2eafc,
+     #edf2fb, 0.4   
+     ); */
+     background-color: rgba(196, 187, 223, 0.66);
+   display: inline-flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 2rem;
+   border-radius: .3rem;   
+ }
+
+ .total{
+   margin-bottom: 0;
+   padding-bottom: 0;
+   font-weight: bolder;
+ }
+
+.user-name{
+  color: #1b212b;
+}
+
+
+.exbtn {
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+		-webkit-tap-highlight-color: transparent;
+}
+
+.exbtn {
+	width: 150px;
+	height: 50px;
+	cursor: pointer;
+	border: none;
+  font-family: 'STIX Two Math', serif;
+	color: rgba(255,255,255,0.5);
+	font-size: 20px;
+	border-radius: 4px;
+	box-shadow: inset 0px 3px 5px rgba(255,255,255,0.5), 0px 0px 10px rgba(0,0,0,0.15);
+	background: rgb(2,0,36);
+background: linear-gradient(45deg, rgba(2,0,36,0) 5%, rgba(255,255,255,.5) 6%, rgba(255,255,255,0) 9%, rgba(255,255,255,.5) 10%, rgba(255,255,255,0) 17%, rgba(255,255,255,.5) 19%, rgba(255,255,255,0) 21%);
+	background-size: 150%;
+	background-position: right;
+	transition: 1s;
+  padding: 0.3rem;
+}
+
+.exbtn:hover {
+	background-position: left;
+	color: white;
+	box-shadow: inset 0px 3px 5px rgba(255,255,255,1), 0px 0px 10px rgba(0,0,0,0.25);
+}
+
+.exbtn:focus {
+	outline: none;
+}
+
+.dropdwn {
+	width: 5rem;
+	height: 50px;
+	cursor: pointer;
+	border: none;
+  font-family: 'STIX Two Math', serif;
+	color:rgba(80, 71, 71, 0.548);
+	font-size: 20px;
+	border-radius: 4px;
+	box-shadow: inset 0px 3px 5px rgba(255,255,255,0.5), 0px 0px 10px rgba(0,0,0,0.15);
+	background: rgb(2,0,36);
+background: linear-gradient(45deg, rgba(2,0,36,0) 5%, rgba(255,255,255,.5) 6%, rgba(255,255,255,0) 9%, rgba(255,255,255,.5) 10%, rgba(255,255,255,0) 17%, rgba(255,255,255,.5) 19%, rgba(255,255,255,0) 21%);
+	background-size: 150%;
+	background-position: right;
+	transition: 1s;
+  padding: 0.3rem;
+}
+
+.dropdwn:hover {
+	background-position: left;
+	color: black;
+	box-shadow: inset 0px 3px 5px rgba(255,255,255,1), 0px 0px 10px rgba(0,0,0,0.25);
+}
+
+.dropdwn:focus {
+	outline: none;
+}
+
+.dest-card{
+  width: 14rem;
+  height: 15rem;
+  color: rgb(44, 32, 15);
+  align-items: center;
+  justify-content: center;
+    background-color: rgba(196, 178, 129, 0.66);
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-radius: .3rem;   
+  background-size: cover;  
+}
+
+#location{
+  color: #33707a;
+  justify-content: center;
+  text-align: center;
+  margin-top: 1px;
+  background: coral;
+}
+
+.clickme{
+margin-bottom: 5px;
+color: aqua;
+text-align: center;
+}
+
+
+.comment-card{
+  width: 60rem;
+  height: 9rem;
+  color: rgb(44, 32, 15);
+  align-items: center;
+  justify-content: center;
+    background-color: rgba(196, 178, 129, 0.66);
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-radius: .3rem;   
+  background-size: cover;  
+}
+
+#user.tag{
+  position: absolute;
+  margin-bottom: 0%;
+  margin-right: 0%;
+  padding-right: 0%;
+  padding-bottom: 0%;
+}
+
+
+/* ====buttons==== */
+
+#commentBtn{
+  background:#1AAB8A;
+  color:#fff;
+  border:none;
+  position:relative;
+  height:60px;
+  font-size:1.6em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+}
+#commentBtn:hover{
+  background:#fff;
+  color:#1AAB8A;
+}
+#commentBtn:before,#commentBtn:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #1AAB8A;
+  transition:400ms ease all;
+}
+#commentBtn:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+#commentBtn:hover:before,#commentBtn:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}

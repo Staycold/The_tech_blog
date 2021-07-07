@@ -6,12 +6,12 @@ const withAuth = require('../../utils/auth')
 
 router.get('/', async (req, res) => {
     try {
-      const userData = await Post.findAll();
-      if (!userData) {
+      const postData = await Post.findAll();
+      if (!postData) {
         res.status(404).json({ message: 'No Post with this id!' });
         return;
       }
-      res.status(200).json(userData);
+      res.status(200).json(postData);
     } catch (err) {
       res.status(500).json(err);
     }
@@ -19,9 +19,9 @@ router.get('/', async (req, res) => {
 
   router.get('/:id', async (req, res) => {
     try {
-      const postData = await User.findByPk(req.params.id);
+      const postData = await Post.findByPk(req.params.id);
       if (!postData) {
-        res.status(404).json({ message: 'No user with this id!' });
+        res.status(404).json({ message: 'No post can be found!' });
         return;
       }
       res.status(200).json(postData);
@@ -35,7 +35,8 @@ router.get('/', async (req, res) => {
           const postData = await Post.create({
               title: req.body.title,
               content: req.body.content,
-              user_id: req.session.user_id 
+              user_id: 1
+              // user_id: req.session.user_id 
           })
           res.status(200).json({message: "Everything went well!"})
       } catch (err) {
@@ -50,7 +51,7 @@ router.get('/', async (req, res) => {
         const postData = await Post.update({
             title: req.body.title,
             content: req.body.content,
-            user_id: req.session.user_id 
+           
         })
         res.status(200).json({message: "Everything went well!"})
     } catch (err) {
@@ -63,9 +64,10 @@ router.get('/', async (req, res) => {
 router.delete('/:id', async (req, res) => {
     try {
         const postData = await Post.destroy({
-            title: req.body.title,
-            content: req.body.content,
-            user_id: req.session.user_id 
+          where:{
+            id:req.params.id
+          }
+           
         })
         res.status(200).json({message: "Everything went well!"})
     } catch (err) {

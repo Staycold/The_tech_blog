@@ -28,9 +28,19 @@ router.get('/', async (req, res) => {
 
   router.get('/postview/:id', async (req, res) => {
       try {
-        const postData = await Post.findByPk(req.params.id, {plain: true});
-        console.log(postData)
-        res.render('postview', postData);
+        const postData = await Post.findByPk(req.params.id,{
+          include:{
+            model:Comment,
+            attributes: ['content'],
+          }});
+
+          
+          const comments = postData.comments.map((comment) => comment.get({ plain: true }));
+
+          const post = postData.get({plain: true});
+
+        console.log(postData.content)
+        res.render('postview', {post,comments});
     }
     catch (err) {
         res.render('error', err)
