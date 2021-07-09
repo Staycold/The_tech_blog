@@ -35,8 +35,7 @@ router.get('/', async (req, res) => {
           const postData = await Post.create({
               title: req.body.title,
               content: req.body.content,
-              user_id: 1
-              // user_id: req.session.user_id 
+              user_id: req.session.user_id 
           })
           res.status(200).json({message: "Everything went well!"})
       } catch (err) {
