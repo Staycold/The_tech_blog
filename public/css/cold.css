@@ -430,3 +430,10 @@ a{color:inherit;text-decoration:none}
 }
 
 /* ======LOGIN FORM END====================== */
+/* ====== post title and name======== */
+
+#titleBar{
+  display: flex;
+  justify-content: space-between;
+}
+

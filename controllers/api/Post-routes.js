@@ -39,29 +39,38 @@ router.get('/', async (req, res) => {
           })
           res.status(200).json({message: "Everything went well!"})
       } catch (err) {
-
+        res.status(500).json({message: err})
       }
   })
 
 
 //   NOT DONE YET!!!
   router.put('/:id', async (req, res) => {
+    console.log(`before the try`)
     try {
+      console.log(`inside the try`)
         const postData = await Post.update({
             title: req.body.title,
-            content: req.body.content,
-           
+            content: req.body.content
+        },
+        {
+          where:{
+            id:req.params.id
+          }
         })
+    
         res.status(200).json({message: "Everything went well!"})
     } catch (err) {
-        
+        res.status(500).json({message: err})
     }
 })
 
 
 // NOT DONE YET!!!!!!!!!!!!!!!
 router.delete('/:id', async (req, res) => {
+console.log(`before the try`)
     try {
+console.log(`inside the try`)
         const postData = await Post.destroy({
           where:{
             id:req.params.id
@@ -70,7 +79,7 @@ router.delete('/:id', async (req, res) => {
         })
         res.status(200).json({message: "Everything went well!"})
     } catch (err) {
-        
+      res.status(500).json({message: err})
     }
 })
 

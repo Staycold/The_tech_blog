@@ -1,6 +1,6 @@
 
 
-<div style="background: url(/images/travelbdg1.jpg)" class="page-holder bg-cover">
+<div >
   <div class="container py-5">
     <header class="text-center text-white py-5">
 <div id="main-post">
@@ -11,6 +11,12 @@
     </header>
   </div>
 
+{{!-- show only if user logged in is the owner of the post --}}
+
+{{#if post.isOwner  }}
+<button id='delBtn' data-id="{{post.id}}">Delete</button><button id="updateBtn">Update</button>
+{{/if}}
+
   <section class="container">
   
   <section class="flex-row justify-center">    
@@ -18,6 +24,8 @@
     {{> comments}}
     {{/each}}
   </section>
+
+
 
   <form class="form new-comment-form">
 
@@ -36,3 +44,4 @@
   </div>
 </section>
 </div>
+<script src='/js/postview.js'></script>

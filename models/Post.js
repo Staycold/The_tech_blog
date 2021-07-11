@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes, DATE } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Post extends Model {
@@ -27,6 +27,10 @@ Post.init({
             key: "id"
         }
 
+    },
+    timestamps:{
+        type: DataTypes.DATEONLY,
+        defaultValue:DataTypes.NOW
     }
 },
 {

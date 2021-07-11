@@ -8,13 +8,25 @@ router.get('/', async (req, res) => {
   
     try {
       // Get all Post data
-      const postData = await Post.findAll();
+      const postData = await Post.findAll({
+        include:{
+          model:User,
+          attributes: ['name'],
+        }
+      });
       // const userData = await User.findByPk(1, {plain: true});
       // Serialize data
-      const post = postData.map((post) =>  post.get({ plain: true}));
-      
+      const posts = postData.map((post) =>{
+        let serializedPost = post.get({ plain: true});
+        serializedPost.isOwner = (serializedPost.user_id == req.session.user_id);
+
+        return serializedPost;
+      });
+
+
+     
       res.render('homepage', {
-        post:post,
+        posts:posts,
         userId:req.session.user_id,
       logged_in: req.session.logged_in,
     });
@@ -83,11 +95,11 @@ router.get('/', async (req, res) => {
       const post = postData.get({ plain: true });
   
       console.log(post)
-      console.log(post.title)
+      console.log(comments)
   
       res.render('postview', {
-        comments,
-        post,
+        comments:comments,
+        post:post,
         userId:req.session.user_id,
       logged_in: req.session.logged_in,
     });
