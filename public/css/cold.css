@@ -437,3 +437,42 @@ a{color:inherit;text-decoration:none}
   justify-content: space-between;
 }
 
+#post-container{
+  border:#FCF6BD;
+  background-image: linear-gradient(
+  /* #FF99C8, */
+  /* #FCF6BD, */
+  #D0F4DE, 
+  /* #A9DEF9, */
+  #E4C1F9
+  )
+}
+
+#main-post{
+  background-color: #E4C1F9;
+  color: #6a6f8c;
+}
+
+#dash-container{
+  background-image: linear-gradient(#A9DEF9,#FCF6BD );
+}
+
+/* ======post card end============= */
+/* ===========Comment card============== */
+/* #comment-container{
+  background-image: linear-gradient( #D0F4DE, #FF99C8,);
+  color: #33707a;
+} */
+/* ===========Comment card end============== */
+
+/* ========Title page========= */
+
+#topics{
+ 
+  color:
+   /* #FF99C8 */
+  #FCF6BD,
+  /* #D0F4DE, */
+  /* #A9DEF9, */
+  /* #E4C1F9; */
+}

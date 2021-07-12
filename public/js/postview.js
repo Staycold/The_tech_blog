@@ -57,6 +57,6 @@ const delBtn = async (event) => {
     }
   }
   
-  document
-    .querySelector('.new-comment-form')
-    .addEventListener('submit', newComm);
+  if(document.querySelector('.new-comment-form')){
+    document.querySelector('.new-comment-form')
+    .addEventListener('submit', newComm)}

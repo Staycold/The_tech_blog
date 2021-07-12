@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
       // Serialize data
       const posts = postData.map((post) =>{
         let serializedPost = post.get({ plain: true});
-        serializedPost.isOwner = (serializedPost.user_id == req.session.user_id);
+        serializedPost.isOwner = (serializedPost.user_id === req.session.user_id);
 
         return serializedPost;
       });
@@ -49,35 +49,11 @@ router.get('/', async (req, res) => {
         logged_in: req.session.logged_in});
     });
   
-  
 
-// This one or the next one?
-  // router.get('/postview/:id', async (req, res) => {
-  //     try {
-  //       const postData = await Post.findByPk(req.params.id,{
-  //         include:{
-  //           model:Comment,
-  //           attributes: ['content'],
-  //         }});
-
-          
-  //         const comments = postData.comments.map((comment) => comment.get({ plain: true }));
-
-  //         const post = postData.get({plain: true});
-
-  //       console.log(postData.content)
-  //       res.render('postview', {post,comments});
-  //   }
-  //   catch (err) {
-  //       res.render('error', err)
-  //   }
-  
-    
-  // });
-
-// probably a better way to get post
   router.get('/postview/:id', async (req, res) => { 
+    console.log(`before the try`)
     try {
+      console.log(`inside the try`)
       // Get all comments
       const commentData = await Comment.findAll({
         where:{
@@ -86,6 +62,10 @@ router.get('/', async (req, res) => {
           include:{
           model:Post,
           attributes: ['title', 'content'],
+        },
+        include:{
+          model:User,
+          attributes: ['name'],
         }
       });
       const postData = await Post.findByPk( req.params.id)
@@ -93,7 +73,12 @@ router.get('/', async (req, res) => {
       // Serialize data
       const comments = commentData.map((comment) => comment.get({ plain: true }));
       const post = postData.get({ plain: true });
-  
+      // const posts = postData.map((post) =>{
+      //   let serializedPost = post.get({ plain: true});
+      //   serializedPost.isOwner = (serializedPost.user_id === req.session.user_id);
+
+      //   return serializedPost;
+      // });
       console.log(post)
       console.log(comments)
   
@@ -107,5 +92,57 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
   });
+
+
+  router.get('/dashboard/:id', async (req, res) => {
+    try {
+      const postData = await Post.findAll({
+        where:{
+          user_id: req.params.id
+        }});
+  
+     
+     
+      const userPosts = postData.map((userPost) => userPost.get({ plain: true }));
+  
+      res.render('dashboard', { 
+      userPosts:userPosts,
+      userId:req.session.user_id,
+       userData:req.session.userData,
+        logged_in:req.session.logged_in
+      });
+  
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  });
+
+
+
+  router.get('/editpost/:id', async (req, res) => {
+    try {
+      const postData = await Post.findByPk(req.params.id, {
+        include: [
+          {
+            model: User,
+            attributes: ['name'],
+          },
+        ],
+      });
+  
+      const post = postData.get({ plain: true });
+
+      res.render('editpost', {
+        post:post, 
+        userId:req.session.user_id,
+        logged_in: req.session.logged_in
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
+
 
   module.exports = router;

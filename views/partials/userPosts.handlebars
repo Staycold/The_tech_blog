@@ -3,7 +3,7 @@
 
   <a class="nav-link" href="/postview/{{id}}">
 
-<div class="card-body" class="col-md-4" id="post-container">
+<div class="card-body" class="col-md-4" id="dash-container">
 <header id='titleBar'><h2 id='title'>{{title}}</h2> <p id="info">Created by {{user.name}} on {{timestamps}}</p></header>
         
         <div id="content">
@@ -14,4 +14,6 @@
     
 </div>
  </a>
+ <button id='delBtn' data-id="{{post.id}}">Delete</button><button id="updateBtn">Update</button>
 </section>
+{{!-- <script src='/js/postview.js'></script> --}}

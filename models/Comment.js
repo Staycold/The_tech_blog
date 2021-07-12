@@ -30,6 +30,10 @@ Comment.init({
             model: "user",
             key: "id"
         }
+    },
+    timestamps:{
+        type: DataTypes.DATEONLY,
+        defaultValue:DataTypes.NOW
     }
 },
 {
