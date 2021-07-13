@@ -79,8 +79,11 @@ THEN I am able to view Posts but I am prompted to log in again before I can add,
 
   ## Screenshots
   
-<img src="../public/Images/techblog1.png"/>
-<img src="../public/Images/techblog2.png"/>
-<img src="../public/Images/techblog3.png"/>
-<img src="../public/Images/techblog4.png"/>
+<img src="./public/Images/techblog1.png"/>
+
+<img src="./public/Images/techblog2.png"/>
+
+<img src="./public/Images/techblog3.png"/>
+
+<img src="./public/Images/techblog4.png"/>
 
