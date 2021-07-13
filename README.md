@@ -1,5 +1,28 @@
-# The_tech_blog
-<ul>
+ [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]
+
+
+  
+ 
+## Tech Blog
+  I Hope you enjoy my tech blog. Blog about tech, or whatever other topic. I won't tell.
+  
+
+## Table of contents
+
+    
+    
+*[Criteria](#criteria)
+    
+    
+*[Links](#links)
+    
+*[License](#license)
+    
+    
+*[Screenshots](#screenshots)
+    
+  ## Criteria
+  <ul>
 <li>GIVEN a CMS-style blog site</li>
 <li>WHEN I visit the site for the first time
 THEN I am presented with the homepage, which includes existing blog posts if any have been posted; navigation links for the homepage and the dashboard; and the option to log in</li>
@@ -32,5 +55,32 @@ THEN I am able to delete or update my post and taken back to an updated dashboar
 <li>WHEN I click on the logout option in the navigation
 THEN I am signed out of the site</li>
 <li>WHEN I am idle on the site for more than a set time
-THEN I am able to view comments but I am prompted to log in again before I can add, update, or delete comments</li>
+THEN I am able to view Posts but I am prompted to log in again before I can add, update, or delete posts</li>
 </ul>
+
+ 
+
+  ## Links
+  <h5>Heroku:</h5>
+<a href="https://cold-tech-blog.herokuapp.com/" target="_blank">https://cold-tech-blog.herokuapp.com/</a>
+  
+
+  <h5>Github:</h5>
+<a href="https://github.com/Staycold/The_tech_blog " target="_blank">https://github.com/Staycold/The_tech_blog</a>
+
+
+ 
+
+
+  ## License  
+  (https://opensource.org/licenses/MIT)
+
+
+
+  ## Screenshots
+  
+<img src="../public/Images/techblog1.png"/>
+<img src="../public/Images/techblog2.png"/>
+<img src="../public/Images/techblog3.png"/>
+<img src="../public/Images/techblog4.png"/>
+
