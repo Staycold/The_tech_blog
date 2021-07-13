@@ -238,7 +238,8 @@ text-align: center;
 /* ====buttons==== */
 
 #commentBtn{
-  background:#1AAB8A;
+  /* background:#1AAB8A; */
+  background:#c49fe2;
   color:#fff;
   border:none;
   position:relative;
@@ -251,7 +252,8 @@ text-align: center;
 }
 #commentBtn:hover{
   background:#fff;
-  color:#1AAB8A;
+  /* color:#1AAB8A; */
+  color:#c49fe2;
 }
 #commentBtn:before,#commentBtn:after{
   content:'';
@@ -260,7 +262,8 @@ text-align: center;
   right:0;
   height:2px;
   width:0;
-  background: #1AAB8A;
+  /* background: #1AAB8A; */
+  background: #c49fe2;
   transition:400ms ease all;
 }
 #commentBtn:after{
@@ -430,7 +433,7 @@ a{color:inherit;text-decoration:none}
 }
 
 /* ======LOGIN FORM END====================== */
-/* ====== post title and name======== */
+/* ====== post cards title and name======== */
 
 #titleBar{
   display: flex;
@@ -448,6 +451,11 @@ a{color:inherit;text-decoration:none}
   )
 }
 
+#post-container:hover{
+  box-shadow:1px 1px 25px 10px #E4C1F9;
+
+}
+
 #main-post{
   background-color: #E4C1F9;
   color: #6a6f8c;
@@ -455,6 +463,10 @@ a{color:inherit;text-decoration:none}
 
 #dash-container{
   background-image: linear-gradient(#A9DEF9,#FCF6BD );
+}
+
+#dash-container:hover{
+  box-shadow:1px 1px 25px 10px #b3a73e;
 }
 
 /* ======post card end============= */
@@ -471,8 +483,149 @@ a{color:inherit;text-decoration:none}
  
   color:
    /* #FF99C8 */
-  #FCF6BD,
+  #FCF6BD
   /* #D0F4DE, */
   /* #A9DEF9, */
-  /* #E4C1F9; */
+  /* #E4C1F9; */;
+}
+
+/* ==============================title page end============================== */
+/* ========================shiny button====================================== */
+
+
+#createPost {
+  text-decoration: none;
+  border: 1px solid rgb(146, 148, 248);
+  position: relative;
+  overflow: hidden;
+  font-family: castoro;
+}
+
+#createPost:hover {
+  box-shadow: 1px 1px 25px 10px rgba(146, 148, 248, 0.4);
+}
+
+#createPost:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(146, 148, 248, 0.4),
+    transparent
+  );
+  transition: all 650ms;
+}
+
+#createPost:hover:before {
+  left: 100%;
+}
+
+/* =============================shiny butotn end======================== */
+/* ====================post create====================================== */
+
+#new-post{
+background-color: #FCF6BD;
+color:#1161ee
+}
+
+#new-title{
+  background-color: #FCF6BD;
+}
+
+#tell{
+  color:#353535
+}
+
+/* ===========================post create end============================= */
+/* 
+#bluetech{
+  background: url("https://motionarray-portfolio.imgix.net/preview-83721-73b2ffab8d22cad99c5c66f9b51b4993-high.jpg") no-repeat center;
+  background: url("https://wallpaperaccess.com/full/2454628.png") no-repeat center;
+  background: url("https://cdn.wallpapersafari.com/22/14/t8XUQP.jpg") no-repeat center;
+  height: 100vh;
+}
+ */
+
+/* ========================updateBtn=============================== */
+
+ #updateBtn {
+  text-decoration: none;
+  border: 1px solid rgb(146, 148, 248);
+  position: relative;
+  overflow: hidden;
+  font-family: castoro;
+  height: 2rem;
+  width: 6rem;
+}
+
+#updateBtn:hover {
+  box-shadow: 1px 1px 25px 10px rgba(146, 148, 248, 0.4);
+}
+
+#updateBtn:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(146, 148, 248, 0.4),
+    transparent
+  );
+  transition: all 650ms;
+}
+
+#updateBtn:hover:before {
+  left: 100%;
+}
+/* ==========================Update btn ends===================================== */
+/*======================================= Delete btn============================= */
+#delBtn {
+  text-decoration: none;
+  border: 1px solid rgb(248, 146, 146);
+  position: relative;
+  overflow: hidden;
+  font-family: castoro;
+  height: 2rem;
+  width: 6rem;
+}
+
+#delBtn:hover {
+  box-shadow: 1px 1px 25px 10px rgba(248, 167, 146, 0.4);
+}
+
+#delBtn:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(248, 170, 146, 0.4),
+    transparent
+  );
+  transition: all 650ms;
+}
+
+#delBtn:hover:before {
+  left: 100%;
+}
+
+/*==user buttons== */
+
+#userbtns{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

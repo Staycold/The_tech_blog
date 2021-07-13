@@ -11,9 +11,7 @@
     </header>
   </div>
 
-{{#if post.isOwner}}
-<button id='delBtn' data-id="{{post.id}}">Delete</button><button id="updateBtn">Update</button>
-{{/if}}
+
 
   <section class="container">
   
@@ -22,6 +20,8 @@
     {{> comments}}
     {{/each}}
   </section>
+
+
 
 
 
@@ -35,7 +35,11 @@
     <button type="submit" class="btn btn-light m-2" id="commentBtn">Add Comment</button>  
       
 </form>
-
+{{#if post.isOwner}}
+<div id="userbtns">
+<button id='delBtn' data-id="{{post.id}}">Delete</button><button id="updateBtn">Update</button>
+</div>
+{{/if}}
   <div>
     <p>
     </p>

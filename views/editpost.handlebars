@@ -1,13 +1,14 @@
-<div id='userId' data-id={{userId}}></div>
 
-<div class="col-md-12">
+<div class="container py-5" id="edittech">
+{{!-- <div class="container py-5"> --}}
+    <div class="col-md-12">
 
-    <div class="form-add">
+        <div class="form-add">
 
-        <div class="form-update">
-            <form class="container-post postUpdater">
+            <div class="form-update">
+              <form class="container-post postUpdater">
 
-                <h2 clas="m-2">Update Your Post</h2>
+                <h2 class="display-1 font-weight-bold mb-5">Update Your Post</h2>
 
 
                 <div class="form-group m-2">
@@ -20,15 +21,14 @@
                     <label for="content">Content</label>
                     <textarea class="form-input" type="text" id="content" rows="8" cols="80" >{{post.content}}</textarea>
                 </div>
+            </div>
 
-
-
+                <button type="submit" class="btn btn-light m-2" id="createPost" >Update</button>
+              </form>
+            </br>
         </div>
-
-        <button type="submit" class="btn btn-light m-2" >Update</button>
-        </form>
-        </br>
     </div>
+    <div id='userId' data-id={{userId}}></div>
 </div>
 
 
