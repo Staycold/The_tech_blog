@@ -2,7 +2,7 @@
 const router = require("express").Router()
 const Post = require("../../models/Post")
 const withAuth = require('../../utils/auth')
-
+const {DataTypes} = require('sequelize')
 
 router.get('/', async (req, res) => {
     try {
@@ -51,7 +51,8 @@ router.get('/', async (req, res) => {
       console.log(`inside the try`)
         const postData = await Post.update({
             title: req.body.title,
-            content: req.body.content
+            content: req.body.content,
+            timestamps:Date.now()
         },
         {
           where:{

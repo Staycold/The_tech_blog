@@ -50,7 +50,7 @@ router.get('/', async (req, res) => {
     });
   
 
-  router.get('/postview/:id', async (req, res) => { 
+  router.get('/postview/:id', withAuth, async (req, res) => { 
     console.log(`before the try`)
     try {
       console.log(`inside the try`)
@@ -73,12 +73,9 @@ router.get('/', async (req, res) => {
       // Serialize data
       const comments = commentData.map((comment) => comment.get({ plain: true }));
       const post = postData.get({ plain: true });
-      // const posts = postData.map((post) =>{
-      //   let serializedPost = post.get({ plain: true});
-      //   serializedPost.isOwner = (serializedPost.user_id === req.session.user_id);
+    
+      post.isOwner= (req.session.user_id === post.user_id)
 
-      //   return serializedPost;
-      // });
       console.log(post)
       console.log(comments)
   
@@ -94,7 +91,7 @@ router.get('/', async (req, res) => {
   });
 
 
-  router.get('/dashboard/:id', async (req, res) => {
+  router.get('/dashboard/:id', withAuth, async (req, res) => {
     try {
       const postData = await Post.findAll({
         where:{
@@ -120,7 +117,7 @@ router.get('/', async (req, res) => {
 
 
 
-  router.get('/editpost/:id', async (req, res) => {
+  router.get('/editpost/:id', withAuth, async (req, res) => {
     try {
       const postData = await Post.findByPk(req.params.id, {
         include: [
